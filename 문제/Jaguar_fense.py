@@ -10,7 +10,7 @@ jaguars = []
 for i in range(n) :
     for j in range(m) :
         if maps[i][j] == 2 :
-            jaguras.append((i,j))
+            jaguars.append((i,j))
 
 def bfs(walls) :
     visited = [ [False] * m for _ in range(n) ]
