@@ -15,4 +15,4 @@ while start <= end :
     else :
         end = mid - 1
 
-print(end)
+print(end) # end을 출력하는 이유 : 최대길이를 출력하라고 했기 때문
