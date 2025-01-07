@@ -15,4 +15,10 @@ if dp[n] % 2 == 0 :
 else :
     print('SK')
 
-# n % 2 == 0 -> print('CY') else : print('SK') 이 간단함
+# n % 2 == 0 -> print('CY') else :
+#
+#
+#
+#
+#
+# print('SK') 이 간단함
