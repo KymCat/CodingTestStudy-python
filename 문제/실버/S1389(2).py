@@ -29,7 +29,7 @@ def bfs(start) :
 
     return sum(kevin)
 
-sum_list = [INF] # 첫번째항은 INF
+sum_list = [INF] # 첫번째항은 INF / 인덱스와 사람번호를 맞추기위해
 for i in range(1,n+1) :
     sum_list.append(bfs(i))
 
