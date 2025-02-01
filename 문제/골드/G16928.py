@@ -22,14 +22,14 @@ while queue :
     x = queue.popleft()
     if x == 100 : break
 
-    for dice in range(6,0,-1) :
+    for dice in range(6,0,-1) : # 주사위 눈 6부터 1 까지 거꾸로...
         nx = x + dice
 
         if nx <= 100 and not visited[nx] :
-            if nx in ladder_snake.keys() :
+            if nx in ladder_snake.keys() : # 사다리 or 뱀이 있다면
                 nx = ladder_snake[nx]
 
-            if not visited[nx] :
+            if not visited[nx] : # 한번도 방문하지 않은 곳이라면
                 visited[nx] = visited[x] + 1
                 queue.append(nx)
 
