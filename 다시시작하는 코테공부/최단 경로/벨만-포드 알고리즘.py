@@ -14,10 +14,10 @@ def bf(start) :
 
     for i in range(n) : # n-1 번 반복
         for j in range(m) : # 모든 간선 확인
-            start, end, dist = graph[j][0], graph[j][1], graph[j][2]
+            a, b, dist = graph[j][0], graph[j][1], graph[j][2]
 
-            if distance[start] != INF and distance[end] > dist + distance[start] :
-                distance[end] = dist + distance[start]
+            if distance[a] != INF and distance[b] > dist + distance[a] :
+                distance[b] = dist + distance[a]
 
                 if i == n-1 : # 음의 간선 순환 발생 / i가 증가해도 계속 갱신된다는 뜻임
                     return True
