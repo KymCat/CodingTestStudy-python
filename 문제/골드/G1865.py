@@ -16,6 +16,7 @@ for _ in range(tc) :
     for _ in range(w) :
         s,e,t = map(int, sys.stdin.readline().split())
         graph.append((s,e,-t))
+
     def bf(start):
         distance = [INF] * (n+1)
         distance[start] = 0
