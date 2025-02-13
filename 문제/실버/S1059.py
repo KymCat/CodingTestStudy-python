@@ -24,3 +24,21 @@ else :
             print(i,j)
 
     print(answer)
+
+# import sys
+#
+# l = int(input())
+# s = list(map(int, sys.stdin.readline().split()))
+# n = int(input())
+#
+# if n in s :
+#     print(0)
+# else :
+#     s.append(0)
+#     s.append(n)
+#     s.sort()
+#     idx = s.index(n)
+#
+#     start = n - s[idx-1]
+#     end = s[idx+1] - n
+#     print(start*end-1)
