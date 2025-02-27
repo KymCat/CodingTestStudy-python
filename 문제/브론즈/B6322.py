@@ -6,8 +6,7 @@ while True :
     if a == b == c == 0 :
         break
 
-    if cnt > 1:
-        print()
+    if cnt > 1: print()
     print(f"Triangle #{cnt}")
 
     if c == -1:
