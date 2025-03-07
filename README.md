@@ -1,2 +1,3 @@
-# CodingTestStudy
-## 스스로 공부하여 외운 코드들을 작성한 저장소입니다
+# 🖋***Coding Test Collection***
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+
