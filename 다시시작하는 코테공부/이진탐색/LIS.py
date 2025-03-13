@@ -39,3 +39,6 @@ for i in range(1,n) :
 
 print(len(ans))
 
+# 이 코드는 최장 길이만 보장함 !!
+# ans 안쪽 원소들은 최장 길이때의 원소가 아닐수도 있음 !
+# 원소까지 구하는 코드 : https://github.com/KymCat/CodingTestStudy/blob/main/%EB%AC%B8%EC%A0%9C/%ED%94%8C%EB%9E%9C%ED%8B%B0%EB%84%98/P14003.py
