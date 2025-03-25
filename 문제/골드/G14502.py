@@ -1,25 +1,9 @@
 import sys, copy
 from collections import deque
+from itertools import combinations
 
-n,m = map(int, sys.stdin.readline().split())
-
-maps = []
-virus = []
-safe = 0
-for i in range(n) :
-    row = list(map(int, sys.stdin.readline().split()))
-    maps.append(row)
-
-    for j in range(m) :
-        if row[j] == 2 :
-            virus.append((i,j))
-        elif row[j] == 0 :
-            safe+=1
-
-ans = 0
-def bfs() :
+def bfs(maps) :
     q = deque(virus)
-    cpy_maps = copy.deepcopy(maps)
     safe_count = safe
     global ans
 
@@ -32,25 +16,35 @@ def bfs() :
             nx = x + dx[i]
             ny = y + dy[i]
 
-            if 0 <= nx < n and 0 <= ny < m and cpy_maps[nx][ny] == 0 :
-                cpy_maps[nx][ny] = 2
+            if 0 <= nx < n and 0 <= ny < m and maps[nx][ny] == 0 :
+                maps[nx][ny] = 2
                 safe_count-=1
-                if safe_count <= ans : return
+                if safe_count <= ans : return safe_count
                 q.append((nx, ny))
-    ans = max(ans, safe_count)
+    return safe_count
 
-def wall(cnt) :
-    if cnt == 3 :
-        bfs()
-        return
+n,m = map(int, sys.stdin.readline().split())
 
-    else :
-        for i in range(n) :
-            for j in range(m) :
-                if maps[i][j] == 0 :
-                    maps[i][j] = 1
-                    wall(cnt+1)
-                    maps[i][j] = 0
+safe = 0
+maps = []
+virus = []
+wall = []
+for i in range(n) :
+    row = list(map(int, sys.stdin.readline().split()))
+    maps.append(row)
 
-wall(0)
-print(ans-3) # wall()에서 벽 3개 설치한거 빼기
+    for j in range(m) :
+        if row[j] == 2 :
+            virus.append((i,j))
+        elif row[j] == 0 :
+            safe+=1
+            wall.append((i,j))
+
+ans = 0
+for cb in combinations(wall, 3) :
+    cpy_maps = copy.deepcopy(maps)
+    for x,y in cb :
+        cpy_maps[x][y] = 1
+    ans = max(ans, bfs(cpy_maps))
+
+print(ans-3)
